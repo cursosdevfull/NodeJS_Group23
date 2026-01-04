@@ -1,0 +1,35 @@
+{
+  "name": "nodejs_group23",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "execute": "ts-node index.ts",
+    "test": "echo 'No hay tests specified' && exit 0",
+    "prepare": "tsc index.ts --outDir ./dist --target ES6 --module commonjs",
+    "build": "npm run prepare && node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursosdevfull/NodeJS_Group23.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cursosdevfull/NodeJS_Group23/issues"
+  },
+  "homepage": "https://github.com/cursosdevfull/NodeJS_Group23#readme",
+  "dependencies": {
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "typescript": "3.9.4"
+  },
+  "peerDependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
