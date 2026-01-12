@@ -1,7 +1,13 @@
-const http = require("http")
+const fs = require("fs")
+const https = require("https")
 const application = require("./app")
 
-const server = http.createServer(application.app)
+const certificates = {
+    key: fs.readFileSync("./certificates/curso-nodejs23.pem"),
+    cert: fs.readFileSync("./certificates/curso-nodejs23.cert")
+}
+
+const server = https.createServer(certificates, application.app)
 server.listen(3000, () => console.log("Server is running on port 3000"))
 
 process.on("uncaughtException", error => {

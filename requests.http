@@ -1,7 +1,7 @@
 post http://localhost:3000/users/create/
 
 ###
-get http://localhost:3000/users/
+get https://localhost:3000/users/
 
 ###
 get http://localhost:3000/utils/book-kouzine
