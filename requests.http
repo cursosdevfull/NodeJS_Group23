@@ -1,1 +1,13 @@
-post http://localhost:3000/users
+post http://localhost:3000/users/create/
+
+###
+get http://localhost:3000/users/
+
+###
+get http://localhost:3000/utils/book-kouzine
+
+###
+get http://localhost:3000/users/page/all
+
+###
+get http://localhost:3000/users/active
