@@ -1,26 +1,11 @@
 const usersController = require("./users.controller")
+const express = require("express")
 
-const routes = [
-    {
-        path: "",
-        method: "GET",
-        ftn: usersController.getUsers
-    },
-    {
-        path: "active",
-        method: "GET",
-        ftn: usersController.getUsersActive
-    },
-    {
-        path: "create",
-        method: "POST",
-        ftn: usersController.postUsers
-    },
-    {
-        path: "page/all",
-        method: "GET",
-        ftn: usersController.getUsersByPage
-    }
-]
+const routes = new express.Router()
+
+routes.get("/", usersController.getUsers)
+routes.get("/active", usersController.getUsersActive)
+routes.post("/create", usersController.postUsers)
+routes.get("/page/all", usersController.getUsersByPage)
 
 module.exports = { routes }

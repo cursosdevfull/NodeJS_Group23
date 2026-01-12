@@ -1,26 +1,11 @@
 const utilsController = require("./utils.controller")
+const express = require("express")
 
-const routes = [
-    {
-        path: "home",
-        method: "GET",
-        ftn: utilsController.getHome
-    },
-    {
-        path: "download-file",
-        method: "GET",
-        ftn: utilsController.getDownloadFile
-    },
-    {
-        path: "book-kouzine",
-        method: "GET",
-        ftn: utilsController.getBookKouzine
-    },
-    {
-        path: "video",
-        method: "GET",
-        ftn: utilsController.getStreamingVideo
-    }
-]
+const routes = new express.Router()
+
+routes.get("/home", utilsController.getHome)
+routes.get("/download-file", utilsController.getDownloadFile)
+routes.get("/book-kouzine", utilsController.getBookKouzine)
+routes.get("/video", utilsController.getStreamingVideo)
 
 module.exports = { routes }

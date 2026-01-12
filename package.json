@@ -23,6 +23,7 @@
   },
   "packageManager": "npm@11.4.2",
   "dependencies": {
+    "express": "^5.2.1",
     "uuid": "^13.0.0"
   }
 }

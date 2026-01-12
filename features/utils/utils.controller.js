@@ -1,25 +1,22 @@
 const fs = require("fs")
 
-function getHome(response) {
-    response.writeHead(200, { "content-type": "text/html" })
-    response.end("<h1>Home</h1>")
+function getHome(request, response) {
+    response.type("text/html").send("<h1>Home</h1>")
 }
 
-function getDownloadFile(response) {
+function getDownloadFile(request, response) {
     const content = fs.readFileSync("./index.html")
-    response.writeHead(200, { "content-type": "text/html" })
-    response.end(content)
+    response.type("text/html").send(content)
 }
 
-function getBookKouzine(response) {
+function getBookKouzine(request, response) {
     fs.readFile("./libro-recetas.pdf", (err, content) => {
-        if (err) return response.end();
-        response.writeHead(200, { "content-type": "application/pdf" })
-        response.end(content)
+        if (err) return response.send();
+        response.type("application/pdf").send(content)
     })
 }
 
-function getStreamingVideo(response) {
+function getStreamingVideo(request, response) {
     response.writeHead(200, { "content-type": "video/mp4" })
     const stream = fs.createReadStream("./video.mp4")
     stream.pipe(response)
