@@ -3,10 +3,10 @@ type PropsEssential = {
 };
 
 type PropsOptional = {
-    id?: number;
-    active?: boolean;
-    createdAt?: Date;
-    updatedAt?: Date | null;
+    id: number;
+    active: boolean;
+    createdAt: Date;
+    updatedAt: Date;
 };
 
 export type RoleProps = PropsEssential & Partial<PropsOptional>;
