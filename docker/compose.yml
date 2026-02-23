@@ -1,0 +1,87 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-course23
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: course23
+      MYSQL_USER: course_user
+      MYSQL_PASSWORD: course_pass123
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data-mysql:/var/lib/mysql
+    networks:
+      - course-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin-course23
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: course_user
+      PMA_PASSWORD: course_pass123
+    ports:
+      - "8080:80"
+    networks:
+      - course-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  redis:
+    image: redis:latest
+    container_name: redis-course23
+    restart: unless-stopped
+    command: redis-server --requirepass redis_pass123
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data-redis:/data
+    networks:
+      - course-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis_pass123", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: redis-commander-course23
+    restart: unless-stopped
+    environment:
+      REDIS_HOSTS: local:redis:6379:0:redis_pass123
+    ports:
+      - "8081:8081"
+    networks:
+      - course-network
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8081"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  course-network:
+    driver: bridge

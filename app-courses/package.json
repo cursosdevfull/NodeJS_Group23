@@ -4,15 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:dev": "tsc",
-    "build:prd": "tsc -p tsconfig.app.json"
+    "build:dev": "tsc && tsc-alias",
+    "build:prd": "tsc -p tsconfig.app.json && tsc-alias -p tsconfig.app.json",
+    "dev": "nodemon src/index.ts",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^25.0.10",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.2.3",
+    "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
@@ -22,6 +26,18 @@
   "packageManager": "npm@11.4.2",
   "dependencies": {
     "@types/express": "^5.0.6",
-    "express": "^5.2.1"
+    "bcryptjs": "^3.0.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.3",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "ioredis": "^5.9.3",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.16.2",
+    "reflect-metadata": "^0.2.2",
+    "tsc-alias": "^1.8.16",
+    "tsconfig-paths": "^4.2.0",
+    "typeorm": "^0.3.28",
+    "zod": "^4.3.6"
   }
 }

@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+  pre_build:
+    commands:
+      - echo Logging with ECR private registry
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 282865065290.dkr.ecr.us-east-1.amazonaws.com/curso-nodejs23
+  build:
+    commands:
+      - echo Build started at `date`
+      - echo Building image
+      - aws s3 cp s3://curso-nodejs23/$ENVIRONMENT/.env app-courses/.env
+      - docker build -f app-courses/Dockerfile -t curso-nodejs:1.0.0 .
+      - docker tag curso-nodejs:1.0.0 282865065290.dkr.ecr.us-east-1.amazonaws.com/curso-nodejs23
+  post_build:
+    commands:
+      - docker push 282865065290.dkr.ecr.us-east-1.amazonaws.com/curso-nodejs23
+artifacts:
+  files:
+    - "Dockerrun.aws.json"    

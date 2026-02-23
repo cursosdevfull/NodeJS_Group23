@@ -5,12 +5,25 @@
         "target": "es2020",
         "outDir": "dist",
         "rootDir": "./src",
-        "baseUrl": "./src",
+        "baseUrl": ".",
         "strict": true,
         "skipLibCheck": true,
         "sourceMap": true,
         "declaration": true,
-        "declarationDir": "declare"
+        "declarationDir": "declare",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "paths": {
+            "@core/*": [
+                "src/core/*"
+            ],
+            "@shared/*": [
+                "src/shared/*"
+            ],
+            "@features/*": [
+                "src/features/*"
+            ]
+        }
     },
     "include": [
         "src/**/*"

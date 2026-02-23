@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.5.2">
+  <diagram name="1" id="4EY0zOJzWzHzwU7kdWPg">
+    <mxGraphModel dx="1426" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#E3E3E3" math="0" shadow="1">
+      <root>
+        <mxCell id="W3_pcens7zfSKSQzMS5n-0" />
+        <mxCell id="W3_pcens7zfSKSQzMS5n-1" parent="W3_pcens7zfSKSQzMS5n-0" />
+        <mxCell id="W3_pcens7zfSKSQzMS5n-2" parent="W3_pcens7zfSKSQzMS5n-1" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;rounded=0;sketch=0;strokeColor=#FF6392;fillColor=#FFE45E;fontColor=#5AA9E6;image=https://cursos-dev.com/assets/images/logo-horizontal.png;" value="" vertex="1">
+          <mxGeometry height="80" width="282.99" as="geometry" />
+        </mxCell>
+        <mxCell id="mstvXdCsI2jf_iHAqKwY-2" edge="1" parent="W3_pcens7zfSKSQzMS5n-1" source="mstvXdCsI2jf_iHAqKwY-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mstvXdCsI2jf_iHAqKwY-1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mstvXdCsI2jf_iHAqKwY-4" edge="1" parent="W3_pcens7zfSKSQzMS5n-1" source="mstvXdCsI2jf_iHAqKwY-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mstvXdCsI2jf_iHAqKwY-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mstvXdCsI2jf_iHAqKwY-0" parent="W3_pcens7zfSKSQzMS5n-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="TYPEORM" vertex="1">
+          <mxGeometry height="60" width="280" x="274" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="mstvXdCsI2jf_iHAqKwY-1" parent="W3_pcens7zfSKSQzMS5n-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="REPOSITORY" vertex="1">
+          <mxGeometry height="60" width="280" x="100" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="mstvXdCsI2jf_iHAqKwY-3" parent="W3_pcens7zfSKSQzMS5n-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="MANAGER" vertex="1">
+          <mxGeometry height="60" width="280" x="460" y="390" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
